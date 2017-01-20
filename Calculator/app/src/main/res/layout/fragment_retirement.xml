@@ -1,0 +1,552 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RetirementFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="6dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Current Age" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtCurrentAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_circle"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="0"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8">
+
+                    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                        android:id="@+id/seekCurrentAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsb_min="0"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        app:dsb_max="100" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Retirement Age" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtRetireAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_circle"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="0"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8">
+                    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                        android:id="@+id/seekRetireAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsb_min="0"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        app:dsb_max="100" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            // monthly exp
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_circle"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="Rs"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8">
+
+                    <EditText
+                        android:id="@+id/edtMonthlyExpense"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edt_bg"
+                        android:digits="0123456789"
+                        android:imeOptions="actionNext"
+                        android:hint="Current Monthly Expenses"
+                        android:inputType="number"
+                        android:maxLength="15"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            // current age
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_circle"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="%"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8">
+
+                    <EditText
+                        android:id="@+id/edtInflation"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edt_bg"
+                        android:digits="0123456789"
+                        android:imeOptions="actionNext"
+                        android:hint="Expected Inflation"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:padding="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            // retire age
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_circle"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="%"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8">
+
+                    <EditText
+                        android:id="@+id/edtReturn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edt_bg"
+                        android:digits="0123456789"
+                        android:imeOptions="actionNext"
+                        android:hint="Expected Return"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            // annuity rate
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_circle"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="%"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8">
+
+                    <EditText
+                        android:id="@+id/edtAnnuityRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edt_bg"
+                        android:digits="0123456789"
+                        android:imeOptions="actionDone"
+                        android:hint="Expected Annuity Rate"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            // output
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/llDetail"
+                        android:visibility="visible"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:background="@color/colorEdittext"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edt_label_left"
+                                android:padding="10dp"
+                                android:layout_marginRight="3dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                                <me.grantland.widget.AutofitTextView
+                                    android:id="@+id/txtSavingYear"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="0"
+                                    android:singleLine="true"
+                                    android:maxLines="1"
+                                    autofit:minTextSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="Savings Years Left"
+                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edt_label_right"
+                                android:padding="10dp"
+                                android:layout_marginLeft="3dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                                <me.grantland.widget.AutofitTextView
+                                    android:id="@+id/txtMonthlyExpInflation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:maxLines="2"
+                                    autofit:minTextSize="16sp"
+                                    android:textColor="@android:color/white"
+                                    android:text="0" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="Monthly Expenses - Inflation included"
+                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        //
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edt_label_left"
+                                android:padding="10dp"
+                                android:layout_marginRight="3dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                                <me.grantland.widget.AutofitTextView
+                                    android:id="@+id/txtAnnualPension"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="0"
+                                    android:singleLine="true"
+                                    android:maxLines="2"
+                                    autofit:minTextSize="16sp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="Annual Pension Required"
+                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edt_label_right"
+                                android:padding="10dp"
+                                android:layout_marginLeft="3dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                                <me.grantland.widget.AutofitTextView
+                                    android:id="@+id/txtCorpus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="0"
+                                    android:maxLines="2"
+                                    autofit:minTextSize="16sp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="Corpus Accumulated"
+                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        //
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edt_label_left"
+                                android:padding="10dp"
+                                android:layout_marginRight="3dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                                <me.grantland.widget.AutofitTextView
+                                    android:id="@+id/txtMonthlyInvestment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="0"
+                                    android:maxLines="2"
+                                    autofit:minTextSize="16sp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="Monthly Investment"
+                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/edt_label_right"
+                                android:padding="10dp"
+                                android:layout_marginLeft="3dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                                <me.grantland.widget.AutofitTextView
+                                    android:id="@+id/txtAnnualInvestment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="0"
+                                    android:maxLines="2"
+                                    autofit:minTextSize="16sp"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@android:color/white"
+                                    android:text="Annual Investment"
+                                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtResult"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/bg_float"
+                        android:gravity="center"
+                        android:text="="
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
