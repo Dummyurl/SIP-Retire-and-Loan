@@ -18,19 +18,19 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
+          <!--  <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Current Age" />
+                android:text="Current Age" />-->
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:gravity="center"
+                android:background="@drawable/shadow_bg"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -53,7 +53,18 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dimen5dp"
+                    android:paddingBottom="@dimen/dimen5dp"
+                    android:paddingRight="@dimen/dimen5dp"
                     android:layout_weight="0.8">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Current Age"
+                        android:textColor="@android:color/holo_green_dark" />
 
                     <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
                         android:id="@+id/seekCurrentAge"
@@ -67,18 +78,18 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <TextView
+         <!--   <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Retirement Age" />
+                android:text="Retirement Age" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:gravity="center"
+                android:background="@drawable/shadow_bg"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -101,7 +112,19 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dimen5dp"
+                    android:paddingBottom="@dimen/dimen5dp"
+                    android:paddingRight="@dimen/dimen5dp"
                     android:layout_weight="0.8">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Retirement Age"
+                        android:textColor="@android:color/holo_green_dark" />
+
                     <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
                         android:id="@+id/seekRetireAge"
                         android:layout_width="match_parent"
@@ -119,8 +142,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+
                 android:gravity="center"
+                android:background="@drawable/shadow_bg"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -142,7 +166,18 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dimen5dp"
+                    android:paddingBottom="@dimen/dimen5dp"
+                    android:paddingRight="@dimen/dimen5dp"
                     android:layout_weight="0.8">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Current Monthly Expenses"
+                        android:textColor="@android:color/holo_green_dark" />
 
                     <EditText
                         android:id="@+id/edtMonthlyExpense"
@@ -154,6 +189,7 @@
                         android:hint="Current Monthly Expenses"
                         android:inputType="number"
                         android:maxLength="15"
+                        android:layout_marginTop="@dimen/dimen5dp"
                         android:padding="10dp" />
 
                 </LinearLayout>
@@ -164,8 +200,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+
                 android:gravity="center"
+                android:background="@drawable/shadow_bg"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -187,7 +224,18 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dimen5dp"
+                    android:paddingBottom="@dimen/dimen5dp"
+                    android:paddingRight="@dimen/dimen5dp"
                     android:layout_weight="0.8">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Expected Inflation"
+                        android:textColor="@android:color/holo_green_dark" />
 
                     <EditText
                         android:id="@+id/edtInflation"
@@ -199,6 +247,7 @@
                         android:hint="Expected Inflation"
                         android:inputType="number"
                         android:maxLength="2"
+                        android:layout_marginTop="@dimen/dimen5dp"
                         android:padding="10dp" />
                 </LinearLayout>
             </LinearLayout>
@@ -208,8 +257,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:gravity="center"
+                android:background="@drawable/shadow_bg"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -231,7 +280,19 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dimen5dp"
+                    android:paddingBottom="@dimen/dimen5dp"
+                    android:paddingRight="@dimen/dimen5dp"
                     android:layout_weight="0.8">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Expected Return"
+                        android:textColor="@android:color/holo_green_dark" />
+
 
                     <EditText
                         android:id="@+id/edtReturn"
@@ -243,6 +304,7 @@
                         android:hint="Expected Return"
                         android:inputType="number"
                         android:maxLength="2"
+                        android:layout_marginTop="@dimen/dimen5dp"
                         android:padding="10dp" />
 
                 </LinearLayout>
@@ -253,7 +315,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:background="@drawable/shadow_bg"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -276,7 +338,18 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/dimen5dp"
+                    android:paddingBottom="@dimen/dimen5dp"
+                    android:paddingRight="@dimen/dimen5dp"
                     android:layout_weight="0.8">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Expected Annuity Rate"
+                        android:textColor="@android:color/holo_green_dark" />
 
                     <EditText
                         android:id="@+id/edtAnnuityRate"
@@ -288,6 +361,7 @@
                         android:hint="Expected Annuity Rate"
                         android:inputType="number"
                         android:maxLength="2"
+                        android:layout_marginTop="@dimen/dimen5dp"
                         android:padding="10dp" />
 
                 </LinearLayout>
@@ -307,7 +381,7 @@
 
                     <LinearLayout
                         android:id="@+id/llDetail"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="30dp"

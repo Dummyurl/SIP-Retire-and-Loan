@@ -4,6 +4,10 @@
     android:layout_height="match_parent"
     tools:context=".LoanFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +18,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:gravity="center"
             android:background="@drawable/shadow_bg"
             android:orientation="horizontal">
@@ -59,7 +62,7 @@
                     android:hint="Loan Amount"
                     android:imeOptions="actionNext"
                     android:inputType="number"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/dimen5dp"
                     android:maxLength="15"
                     android:padding="10dp" />
             </LinearLayout>
@@ -70,7 +73,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+
             android:gravity="center"
             android:background="@drawable/shadow_bg"
             android:orientation="horizontal">
@@ -95,6 +98,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:paddingTop="@dimen/dimen5dp"
+                android:paddingBottom="@dimen/dimen5dp"
+                android:paddingRight="@dimen/dimen5dp"
                 android:layout_weight="0.8">
                 <TextView
                     android:layout_width="wrap_content"
@@ -114,7 +120,7 @@
                     android:hint="Tenure of Loan (Years)"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/dimen5dp"
                     android:padding="10dp" />
             </LinearLayout>
         </LinearLayout>
@@ -124,7 +130,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:gravity="center"
             android:background="@drawable/shadow_bg"
             android:orientation="horizontal">
@@ -149,6 +154,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:paddingTop="@dimen/dimen5dp"
+                android:paddingBottom="@dimen/dimen5dp"
+                android:paddingRight="@dimen/dimen5dp"
                 android:layout_weight="0.8">
                 <TextView
                     android:layout_width="wrap_content"
@@ -165,7 +173,7 @@
                     android:digits="0123456789."
                     android:hint="Interest Rate"
                     android:imeOptions="actionDone"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/dimen5dp"
                     android:inputType="number"
                     android:maxLength="5"
                     android:padding="10dp" />
@@ -189,6 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@color/colorEdittext"
                     android:orientation="vertical">
 
@@ -223,6 +232,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
                         android:text="0"
                         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -249,6 +259,6 @@
 
 
     </LinearLayout>
-
+    </ScrollView>
 
 </RelativeLayout>
