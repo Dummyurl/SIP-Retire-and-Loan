@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class RetirementFragment extends Fragment implements View.OnClickListener
 
     LinearLayout llDetail ;
     AutofitTextView txtSavingYear, txtMonthlyExpInflation, txtAnnualPension, txtCorpus,txtMonthlyInvestment, txtAnnualInvestment ;
+    ScrollView scrollView ;
 
     public RetirementFragment() {
         // Required empty public constructor
@@ -102,6 +104,7 @@ public class RetirementFragment extends Fragment implements View.OnClickListener
         txtCorpus = (AutofitTextView) view.findViewById(R.id.txtCorpus);
         txtMonthlyInvestment = (AutofitTextView) view.findViewById(R.id.txtMonthlyInvestment);
         txtAnnualInvestment = (AutofitTextView) view.findViewById(R.id.txtAnnualInvestment);
+        scrollView = (ScrollView) view.findViewById(R.id.scrollView);
 
         return view ;
     }
@@ -162,6 +165,13 @@ public class RetirementFragment extends Fragment implements View.OnClickListener
 
                     llDetail.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up));
                     llDetail.setVisibility(View.VISIBLE);
+
+                    scrollView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                        }
+                    });
                 }
 
 

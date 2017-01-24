@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -26,6 +27,7 @@ public class LoanFragment extends Fragment implements View.OnClickListener {
     EditText edtLoanAmt, edtYear, edtInterestRate ;
     TextView txtResult, txtEMI, txtTotalAmt ;
     LinearLayout llDetail ;
+    ScrollView scrollView ;
 
     public LoanFragment() {
         // Required empty public constructor
@@ -51,6 +53,7 @@ public class LoanFragment extends Fragment implements View.OnClickListener {
         txtResult = (TextView) view.findViewById(R.id.txtResult);
         txtResult.setOnClickListener(this);
         txtTotalAmt = (TextView) view.findViewById(R.id.txtTotalAmt);
+        scrollView = (ScrollView) view.findViewById(R.id.scrollView);
 
         return view;
     }
@@ -89,6 +92,13 @@ public class LoanFragment extends Fragment implements View.OnClickListener {
 
                     llDetail.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up));
                     llDetail.setVisibility(View.VISIBLE);
+
+                    scrollView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                        }
+                    });
                 }
 
                 break;

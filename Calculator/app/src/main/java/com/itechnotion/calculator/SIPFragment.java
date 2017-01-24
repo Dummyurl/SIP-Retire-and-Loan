@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -28,6 +29,7 @@ public class SIPFragment extends Fragment implements View.OnClickListener {
     EditText edtExpectedReturn, edtMonthlyInvestment, edtYear, edtLumpsum ;
     TextView txtResult, txtAmount;
     LinearLayout llDetail ;
+    ScrollView scrollView ;
 
     public SIPFragment() {
         // Required empty public constructor
@@ -53,6 +55,8 @@ public class SIPFragment extends Fragment implements View.OnClickListener {
         txtResult.setOnClickListener(this);
         txtAmount = (TextView) view.findViewById(R.id.txtAmount);
 
+        scrollView = (ScrollView) view.findViewById(R.id.scrollView);
+
         return view ;
     }
 
@@ -73,6 +77,7 @@ public class SIPFragment extends Fragment implements View.OnClickListener {
                 }else if (TextUtils.isEmpty(edtYear.getText().toString())){
                     edtYear.setError("Please enter Year");
                 }else{
+
 
                     double loanAmount = Integer.parseInt(edtMonthlyInvestment.getText().toString().trim());
                     Log.e("amt :", loanAmount + "");
@@ -114,6 +119,13 @@ public class SIPFragment extends Fragment implements View.OnClickListener {
 
                     llDetail.startAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up));
                     llDetail.setVisibility(View.VISIBLE);
+
+                    scrollView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            scrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                        }
+                    });
 
                 }
 
