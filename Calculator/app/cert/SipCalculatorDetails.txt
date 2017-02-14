@@ -1,0 +1,4 @@
+Key name = sipcalculator
+Password = 123456
+Alias = sipcalculator
+First name = sipcalculator
