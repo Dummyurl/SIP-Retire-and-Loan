@@ -4,84 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:gravity="center"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.itechnotion.calculator.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <LinearLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        // SIP
-        <LinearLayout
-            android:id="@+id/llSip"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:padding="20dp"
-            android:layout_marginBottom="50dp"
-            android:background="@drawable/buttonstylesip"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="SIP"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="wrap_content"
-                android:textColor="@android:color/white"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        // Retirement
-        <LinearLayout
-            android:id="@+id/llRetirement"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:layout_marginBottom="50dp"
-            android:padding="20dp"
-            android:background="@drawable/buttonstyleretirement"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="Retirement"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="wrap_content"
-                android:textColor="@android:color/white"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        // Loan
-        <LinearLayout
-            android:id="@+id/llLoan"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:padding="20dp"
-            android:background="@drawable/buttonstyleloan"
-            android:orientation="horizontal"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="Loan"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="wrap_content"
-                android:textColor="@android:color/white"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </LinearLayout>
+        ads:adSize="BANNER"
+        android:visibility="gone"
+        ads:adUnitId="@string/banner_home_footer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

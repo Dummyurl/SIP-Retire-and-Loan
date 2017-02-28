@@ -17,6 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -54,6 +57,8 @@ public class LoanFragment extends Fragment implements View.OnClickListener {
         txtResult.setOnClickListener(this);
         txtTotalAmt = (TextView) view.findViewById(R.id.txtTotalAmt);
         scrollView = (ScrollView) view.findViewById(R.id.scrollView);
+
+
 
         return view;
     }
@@ -104,4 +109,6 @@ public class LoanFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+
 }

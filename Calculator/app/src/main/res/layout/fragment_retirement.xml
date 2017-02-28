@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:autofit="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".RetirementFragment">
 
     <ScrollView
@@ -11,20 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="6dp"
+
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:layout_marginBottom="40dp"
             android:orientation="vertical">
-
-          <!--  <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="Current Age" />-->
 
 
             <LinearLayout
@@ -143,7 +139,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:gravity="center"
                 android:background="@drawable/shadow_bg"
                 android:orientation="horizontal">
@@ -625,5 +620,6 @@
 
         </LinearLayout>
     </ScrollView>
+
 
 </RelativeLayout>
