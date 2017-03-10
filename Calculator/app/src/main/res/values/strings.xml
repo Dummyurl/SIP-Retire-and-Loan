@@ -3,6 +3,6 @@
     <string name="action_settings">Settings</string>
 
     <!-- AdMob ad unit IDs -->
-    <string name="banner_home_footer">ca-app-pub-2446441446515046/4097803216</string>
-    <string name="interstitial_full_screen">ca-app-pub-2446441446515046/7051269616</string>
+    <string name="banner_home_footer">ca-app-pub-1349532112150193/9026704468</string>
+    <string name="interstitial_full_screen">ca-app-pub-1349532112150193/2296697664</string>
 </resources>

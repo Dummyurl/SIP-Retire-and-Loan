@@ -110,5 +110,4 @@ public class LoanFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-
 }

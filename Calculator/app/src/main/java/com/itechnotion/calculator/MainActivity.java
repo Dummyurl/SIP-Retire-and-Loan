@@ -1,6 +1,9 @@
 package com.itechnotion.calculator;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,14 +18,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +42,15 @@ public class MainActivity extends AppCompatActivity {
     InterstitialAd mInterstitialAd;
 
     Handler handlerInterstitialAd = new Handler();
-    Handler handlerBanner = new Handler();
+    Handler handlerBannerTen = new Handler();
+    Handler handlerBannerTwo = new Handler();
+
+    Handler handlerInterstitialTen = new Handler();
+    Handler handlerInterstitialTwo = new Handler();
+
+    Timer timerBanner, timerInterstitial;
+    TimerTask timerTaskBanner, timerTaskInterstitial;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,24 +70,65 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        adMobBannerInit();
-        adMobInterstitialInit();
+        if (isNetworkConnected(MainActivity.this)) {
+            adMobBannerInit();
+            adMobInterstitialInit();
+            startTimer();
+        }
 
-        handlerBanner.postDelayed(new Runnable() {
+
+    }
+
+    private void startTimer() {
+        timerBanner = new Timer();
+
+        initializeTimerTask();
+        timerBanner.schedule(timerTaskBanner, 10000, 120000); //
+        //  timerInterstitial.schedule(timerTaskInterstitial, 0, 120000); //
+    }
+
+    public void stoptimertask() {
+        //stop the timer, if it's not already null
+        if (timerBanner != null) {
+            timerBanner.cancel();
+            timerBanner = null;
+        }
+
+    }
+
+    public void initializeTimerTask() {
+
+        timerTaskBanner = new TimerTask() {
             public void run() {
-                mAdView.setVisibility(View.VISIBLE);
-                handlerBanner.postDelayed(this, 10000); //now is every 2 minutes
-            }
+                //use a handler to run a toast that shows the current timestamp
+                handlerBannerTwo.post(new Runnable() {
+                    public void run() {
+                        //Toast.makeText(getApplicationContext(), 120000 / 1000 + "", Toast.LENGTH_SHORT).show();
+                        Log.e("handler :", " 20");
+                        mAdView.setVisibility(View.VISIBLE);
+                        handlerBannerTen.postDelayed(new Runnable() {
+                            public void run() {
+                                Log.e("handler :", " 10");
+                                //Toast.makeText(getApplicationContext(), 10000 / 1000 + "", Toast.LENGTH_SHORT).show();
+                                mAdView.setVisibility(View.GONE);
+                            }
 
-        }, 120000); //Every 120000 ms (2 minutes)
+                        }, 10000);
+
+                    }
+                });
+            }
+        };
 
     }
 
     private void adMobBannerInit() {
+
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
         mAdView.loadAd(adRequest);
+        mAdView.setVisibility(View.VISIBLE);
     }
 
     /**
@@ -142,8 +199,11 @@ public class MainActivity extends AppCompatActivity {
         if (mAdView != null) {
             mAdView.pause();
         }
+        stoptimertask();
         handlerInterstitialAd.removeCallbacksAndMessages(null);
-        handlerBanner.removeCallbacksAndMessages(null);
+        handlerBannerTwo.removeCallbacksAndMessages(null);
+        handlerBannerTen.removeCallbacksAndMessages(null);
+        //handlerBanner.removeCallbacksAndMessages(null);
         super.onPause();
     }
 
@@ -153,6 +213,9 @@ public class MainActivity extends AppCompatActivity {
         if (mAdView != null) {
             mAdView.resume();
         }
+        if (timerBanner != null) {
+            startTimer();
+        }
     }
 
     @Override
@@ -161,7 +224,11 @@ public class MainActivity extends AppCompatActivity {
             mAdView.destroy();
         }
         handlerInterstitialAd.removeCallbacksAndMessages(null);
-        handlerBanner.removeCallbacksAndMessages(null);
+        stoptimertask();
+        handlerBannerTwo.removeCallbacksAndMessages(null);
+        handlerBannerTen.removeCallbacksAndMessages(null);
+        handlerInterstitialTen.removeCallbacksAndMessages(null);
+        handlerInterstitialTwo.removeCallbacksAndMessages(null);
         super.onDestroy();
     }
 
@@ -169,7 +236,6 @@ public class MainActivity extends AppCompatActivity {
 
         //interstitial
         mInterstitialAd = new InterstitialAd(this);
-
         // set the ad unit ID
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen));
 
@@ -191,7 +257,6 @@ public class MainActivity extends AppCompatActivity {
                 handlerInterstitialAd.postDelayed(new Runnable() {
                     public void run() {
                         mInterstitialAd.loadAd(adRequest);
-                        mAdView.setVisibility(View.GONE);
                         handlerInterstitialAd.postDelayed(this, 10000); //now is every 2 minutes
                     }
                 }, 120000); //Every 120000 ms (2 minutes)
@@ -199,13 +264,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void showInterstitial() {
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
         }
+    }
+
+    public boolean isNetworkConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
     }
 
 
